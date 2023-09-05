@@ -1,4 +1,4 @@
-# Promise 基础
+# Promise 状态
 
 Promise 的三种状态：
 - ```pending```: Promise 的初始状态，不会触发 then 和 catch 回调函数
