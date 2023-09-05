@@ -26,48 +26,30 @@ Promise 的状态变化：
 - ```fulfilled```:
     ```javascript
     const p = new Promise((resolve, reject) => {
-            resolve('p');
-        });
+        resolve('p');
+    });
     console.log(p);
+    p.then(v => console.log(v));
     ```
   
     输出：
     
     ```
     Promise {<fulfilled>: 'p'}
-    ```
-    ```javascript
-    console.log(p.then(v => console.log(v)));
-    ```
-  
-    输出：
-    
-    ```
-    Promise {<pending>}
     p
     ```
 - ```rejected```:
     ```javascript
     const p = new Promise((resolve, reject) => {
-            reject('p');
-        });
+        reject('p');
+    });
     console.log(p);
+    p.catch(v => console.log(v));
     ```
   
     输出：
     
     ```
     Promise {<rejected>: 'p'}
-    Uncaught (in promise) p
-    ```
-    
-    ```javascript
-    console.log(p.catch(v => console.log(v)));
-    ```
-  
-    输出：
-    
-    ```
-    Promise {<pending>}
     p
     ```
