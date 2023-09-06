@@ -145,3 +145,22 @@ f2
 v2 200
 end
 ```
+
+### async、await 异常处理
+
+1. 把 await 放在 ```try...catch``` 代码块中
+    ```javascript
+    async function f2() {
+        try {
+            let v = await f1();
+        } catch (err) {
+            console.log(err);
+        }
+    }
+    ```
+2. 如果 await 后是 Promise 对象，也可以使用 catch 进行捕获
+    ```javascript
+    async function f2() {
+        let v = await f1().catch(err => console.log(err));
+    }
+    ```
