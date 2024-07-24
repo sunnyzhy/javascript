@@ -19,14 +19,14 @@
 npm install qs --save
 ```
 
-qs 可以通过 arrayFormat 选项对数组进行格式化输出：
+qs 可以通过 ```arrayFormat``` 选项对数组进行格式化输出：
 
 - ```qs.stringify({name: 'aaa',arr: [1,2,3]}}, { arrayFormat: 'indices' })``` ，输出：```name=aaa&arr%5B0%5D=1&arr%5B1%5D=2&arr%5B2%5D=3``` ，即 ```name=aaa&arr[0]=1&arr[1]=2&arr[2]=3```
 - ```qs.stringify({name: 'aaa',arr: [1,2,3]}}, { arrayFormat: 'brackets' })``` ，输出：```name=aaa&arr%5B%5D=1&arr%5B%5D=2&arr%5B%5D=3``` ，即 ```name=aaa&arr[]=1&arr[]=2&arr[]=3```
 - ```qs.stringify({name: 'aaa',arr: [1,2,3]}}, { arrayFormat: 'repeat' })``` ，输出：```name=aaa&arr=1&arr=2&arr=3```
 - ```qs.stringify({name: 'aaa',arr: [1,2,3]}}, { arrayFormat: 'comma' })``` ，输出：```name=aaa&arr=1%2C2%2C3``` ，即 ```name=aaa&arr=1,2,3```
 
-qs 可能通过 skipNulls 选项来跳过 null 或 undefined 值：
+qs 可以通过 ```skipNulls``` 选项来跳过 ```null``` 或 ```undefined``` 值：
 
 - ```qs.stringify({ a: 'b', c: null}, { skipNulls: true })``` ，输出：```a=b```
 
